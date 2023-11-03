@@ -3,6 +3,12 @@
     static int CountA(int number)
     {
         int count = 0;
+        
+        if (number < 0)
+        {
+            number *= -1;
+        }
+        
         while (number > 0)
         {
             // The remainder is one digit of the number
@@ -21,10 +27,20 @@
 
     static void Main()
     {
-        Console.WriteLine("Enter the lower limit:");
-        int a = int.Parse(Console.ReadLine());
-        Console.WriteLine("Enter the upper limit:");
-        int b = int.Parse(Console.ReadLine());
+        int a, b;
+        
+        do
+        {
+            Console.WriteLine("Enter the lower limit:");
+            a = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the upper limit:");
+            b = int.Parse(Console.ReadLine());
+
+            if (a >= b)
+            {
+                Console.WriteLine("The lower limit must be less than the upper limit. Please try again.");
+            }
+        } while (a >= b);
 
         Console.WriteLine($"Numbers between {a} and {b} with two 'A's in duodecimal form:");
 
