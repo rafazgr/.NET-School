@@ -1,0 +1,14 @@
+C:\Users\Rafael\source\repos\Task1.2\bin\Debug\net6.0\Task1.2.exe
+C:\Users\Rafael\source\repos\Task1.2\bin\Debug\net6.0\Task1.2.deps.json
+C:\Users\Rafael\source\repos\Task1.2\bin\Debug\net6.0\Task1.2.runtimeconfig.json
+C:\Users\Rafael\source\repos\Task1.2\bin\Debug\net6.0\Task1.2.dll
+C:\Users\Rafael\source\repos\Task1.2\bin\Debug\net6.0\Task1.2.pdb
+C:\Users\Rafael\source\repos\Task1.2\obj\Debug\net6.0\Task1.2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rafael\source\repos\Task1.2\obj\Debug\net6.0\Task1.2.AssemblyInfoInputs.cache
+C:\Users\Rafael\source\repos\Task1.2\obj\Debug\net6.0\Task1.2.AssemblyInfo.cs
+C:\Users\Rafael\source\repos\Task1.2\obj\Debug\net6.0\Task1.2.csproj.CoreCompileInputs.cache
+C:\Users\Rafael\source\repos\Task1.2\obj\Debug\net6.0\Task1.2.dll
+C:\Users\Rafael\source\repos\Task1.2\obj\Debug\net6.0\refint\Task1.2.dll
+C:\Users\Rafael\source\repos\Task1.2\obj\Debug\net6.0\Task1.2.pdb
+C:\Users\Rafael\source\repos\Task1.2\obj\Debug\net6.0\Task1.2.genruntimeconfig.cache
+C:\Users\Rafael\source\repos\Task1.2\obj\Debug\net6.0\ref\Task1.2.dll
