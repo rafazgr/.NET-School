@@ -17,21 +17,12 @@
 
     static void Main()
     {
-        string isbn;
-
         Console.WriteLine("Enter the first 9 digits of the ISBN:");
         string id = Console.ReadLine();
 
         int checkDigit = CalculateCheckDigit(id);
 
-        if (checkDigit == 10)
-        {
-            isbn = id + "X";
-        }
-        else
-        {
-            isbn = id + checkDigit.ToString();
-        }
+        string isbn = id + (checkDigit == 10 ? "X" : checkDigit.ToString());
 
         Console.WriteLine("The ISBN with the check digit is: " + isbn);
     }
