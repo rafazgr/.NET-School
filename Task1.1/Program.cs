@@ -6,7 +6,7 @@
 
         if (number < 0)
         {
-            number *= -1;
+            number = -number;
         }
 
         while (number > 0)
