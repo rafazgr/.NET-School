@@ -53,7 +53,7 @@
         if (obj == null || GetType() != obj.GetType())
             return false;
 
-        DiagonalMatrix other = (DiagonalMatrix)obj;
+        DiagonalMatrix other = obj as DiagonalMatrix;
 
         if (Size != other.Size)
             return false;
