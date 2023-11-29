@@ -45,9 +45,7 @@
 
         public int CompareTo(RationalNumber other)
         {
-            long thisValue = (long)Numerator * other.Denominator;
-            long otherValue = (long)other.Numerator * Denominator;
-            return thisValue.CompareTo(otherValue);
+            return ((long)Numerator * other.Denominator).CompareTo((long)other.Numerator * Denominator);
         }
 
         public static RationalNumber operator +(RationalNumber a, RationalNumber b)
