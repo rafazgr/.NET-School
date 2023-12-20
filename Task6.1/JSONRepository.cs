@@ -1,4 +1,4 @@
-﻿using System.Text.Json;
+using System.Text.Json;
 
 namespace BookCatalogTask
 {
@@ -6,9 +6,9 @@ namespace BookCatalogTask
     {
         public void Save(string filePath, T data)
         {
-            var catalogData = data as CatalogData;
+            var books = data as List<Book>;
 
-            var booksByAuthor = catalogData.Books.SelectMany(book => book.Authors, (book, author) => new { Book = book, Author = author })
+            var booksByAuthor = books.SelectMany(book => book.Authors, (book, author) => new { Book = book, Author = author })
                 .GroupBy(entry => entry.Author, entry => entry.Book);
 
             Directory.CreateDirectory(filePath);
@@ -35,10 +35,7 @@ namespace BookCatalogTask
                 loadedBooks.AddRange(authorBooks);
             }
 
-            CatalogData catalogData = new CatalogData();
-            catalogData.Books = loadedBooks;
-
-            return (T)(object)catalogData;
+            return (T)(object)loadedBooks;
         }
 
         private string GetAuthorFilePath(string baseFilePath, Author author)
