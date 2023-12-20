@@ -1,4 +1,4 @@
-﻿namespace BookCatalogTask
+namespace BookCatalogTask
 {
     class Program
     {
@@ -25,8 +25,8 @@
             Console.WriteLine("Original Catalog");
             catalog.DisplayCatalog();
 
-            IRepository<CatalogData> xmlRepository = new XMLRepository<CatalogData>();
-            IRepository<CatalogData> jsonRepository = new JSONRepository<CatalogData>();
+            IRepository<List<Book>> xmlRepository = new XMLRepository<List<Book>>();
+            IRepository<List<Book>> jsonRepository = new JSONRepository<List<Book>>();
 
             catalog.SaveToRepository(xmlRepository, "catalog.xml");
             catalog.SaveToRepository(jsonRepository, "catalog");
