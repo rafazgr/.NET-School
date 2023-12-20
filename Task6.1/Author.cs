@@ -1,20 +1,22 @@
-﻿namespace BookCatalogTask
+namespace BookCatalogTask
 {
     public class Author
     {
         private string _firstName;
         private string _lastName;
 
+        public const int MAX_LENGTH = 200;
+
         public string FirstName
         {
             get => _firstName;
-            init => ValidateAndSetProperty(value, 200, nameof(FirstName), ref _firstName);
+            init => ValidateAndSetProperty(value, MAX_LENGTH, nameof(FirstName), ref _firstName);
         }
 
         public string LastName
         {
             get => _lastName;
-            init => ValidateAndSetProperty(value, 200, nameof(LastName), ref _lastName);
+            init => ValidateAndSetProperty(value, MAX_LENGTH, nameof(LastName), ref _lastName);
         }
 
         public DateTime? DateOfBirth { get; init; }
