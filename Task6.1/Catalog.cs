@@ -1,33 +1,23 @@
-﻿namespace BookCatalogTask
+namespace BookCatalogTask
 {
-    public class CatalogData
-    {
-        public List<Book> Books { get; set; }
-
-        public CatalogData()
-        {
-            Books = new List<Book>();
-        }
-    }
-
     public class Catalog
     {
-        private CatalogData catalogData;
+        private List<Book> books;
 
         public Catalog()
         {
-            catalogData = new CatalogData();
+            books = new List<Book>();
         }
 
         public Dictionary<string, Book> Books
         {
             get
             {
-                return catalogData.Books.ToDictionary(book => book.ISBN);
+                return books.ToDictionary(book => book.ISBN);
             }
             set
             {
-                catalogData.Books = new List<Book>(value.Values);
+                books = new List<Book>(value.Values);
             }
         }
 
@@ -41,7 +31,7 @@
             }
 
             book.ISBN = normalizedISBN;
-            catalogData.Books.Add(book);
+            books.Add(book);
         }
 
         public Book GetBook(string isbn)
@@ -76,20 +66,19 @@
             }
         }
 
-        public void SaveToRepository(IRepository<CatalogData> repository, string filePath)
+        public void SaveToRepository(IRepository<List<Book>> repository, string filePath)
         {
-            repository.Save(filePath, catalogData);
+            repository.Save(filePath, books);
         }
 
-        public static Catalog LoadFromRepository(IRepository<CatalogData> repository, string filePath)
+        public static Catalog LoadFromRepository(IRepository<List<Book>> repository, string filePath)
         {
-            CatalogData loadedData = repository.Load(filePath);
+            List<Book> loadedData = repository.Load(filePath);
 
             Catalog catalog = new Catalog();
-            catalog.Books = loadedData.Books
+            catalog.Books = loadedData
                 .GroupBy(book => book.ISBN)
                 .ToDictionary(group => group.Key, group => group.First());
-
 
             return catalog;
         }
